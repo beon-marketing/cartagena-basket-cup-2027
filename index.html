@@ -108,7 +108,7 @@
       text-transform: uppercase; letter-spacing: 3px;
       padding: 6px 20px; border-radius: 50px; margin-bottom: 28px;
     }
-    .hero-logo { width: 110px; margin: 0 auto 24px; filter: brightness(0) invert(1); }
+    .hero-logo { width: 100px; margin: 0 auto 24px; display: block; background: white; border-radius: 50%; padding: 8px; }
     .hero-title {
       font-family: var(--font-display);
       font-size: clamp(4.5rem, 11vw, 9rem);
@@ -283,14 +283,11 @@
     .carousel-wrap::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
     .carousel-track {
       display: flex; gap: 20px;
-      animation: scroll-left 28s linear infinite;
       width: max-content;
+      will-change: transform;
     }
-    .carousel-track:hover { animation-play-state: paused; }
-    @keyframes scroll-left {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    .carousel-wrap { cursor: grab; }
+    .carousel-wrap.dragging { cursor: grabbing; }
     .carousel-item {
       flex-shrink: 0;
       background: var(--gray-light); border-radius: 20px;
@@ -394,10 +391,10 @@
        Reemplaza por las fotos reales de Cartagena y La Manga del PDF.
     ─────────────────────────────────────────────────────────────────── */
     .city-card:nth-child(1) {
-      background: url('https://cartagenabasketcup.com/wp-content/uploads/2026/01/cartagenabasketcup-portada.webp') center/cover no-repeat;
+      background: url('images/ciudad-cartagena.png') center/cover no-repeat;
     }
     .city-card:nth-child(2) {
-      background: url('https://cartagenabasketcup.com/wp-content/uploads/2026/01/alojamientos.webp') center/cover no-repeat;
+      background: url('images/ciudad-lamanga.webp') center/cover no-repeat;
     }
     .city-overlay {
       position: absolute; inset: 0;
@@ -474,7 +471,9 @@
     .form-success p { color: var(--gray); margin-top: 12px; font-size: 0.95rem; }
 
     /* ===== FOOTER ===== */
-    footer { background: var(--black); padding: 60px 24px 32px; }
+    footer { background: var(--white); border-top: 2px solid var(--gray-light); padding: 60px 24px 32px; }
+    .footer-logo { text-align: center; margin-bottom: 40px; }
+    .footer-logo img { height: 72px; width: auto; }
     .footer-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 32px; max-width: 1000px; margin: 0 auto 48px;
@@ -482,18 +481,18 @@
     .f-contact { text-align: center; }
     .f-contact .f-icon { font-size: 1.8rem; margin-bottom: 10px; }
     .f-contact a { color: var(--orange); font-weight: 700; font-size: 0.95rem; }
-    .f-contact p { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 4px; }
+    .f-contact p { color: var(--gray); font-size: 0.8rem; margin-top: 4px; }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px;
+      border-top: 1px solid var(--gray-light); padding-top: 28px;
       text-align: center;
     }
     .partners { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; margin: 24px 0; }
     .partner-pill {
-      border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(0,0,0,0.12); color: var(--gray);
       padding: 6px 18px; border-radius: 50px; font-size: 0.72rem;
       font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     }
-    .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.78rem; }
+    .footer-copy { color: var(--gray); font-size: 0.78rem; }
 
     /* ===== WHATSAPP FLOTANTE ===== */
     .wa-btn {
@@ -576,7 +575,7 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <span class="hero-eyebrow">2ª Edición · Cartagena, Murcia</span>
-    <img class="hero-logo" src="https://cartagenabasketcup.com/wp-content/uploads/2025/04/logo-cartagena-basketcup.webp" alt="CBC" style="filter:brightness(0) invert(1);" />
+    <img class="hero-logo" src="https://cartagenabasketcup.com/wp-content/uploads/2025/04/logo-cartagena-basketcup.webp" alt="CBC" />
     <h1 class="hero-title">
       <span>Cartagena</span>
       <span>Basket Cup</span>
@@ -610,7 +609,7 @@
 
     <div class="dia-card">
       <div class="dia-img">
-        <img src="https://cartagenabasketcup.com/wp-content/uploads/2026/01/alojamientos.webp" alt="Recepción equipos" />
+        <img src="images/dia1-chicas-bandera.webp" alt="Recepción equipos" />
       </div>
       <div class="dia-body">
         <div class="dia-day">Jueves</div>
@@ -625,7 +624,7 @@
 
     <div class="dia-card">
       <div class="dia-img">
-        <img src="https://cartagenabasketcup.com/wp-content/uploads/2026/01/partido.webp" alt="Fase de grupos" />
+        <img src="images/dia2-equipo.webp" alt="Fase de grupos" />
       </div>
       <div class="dia-body">
         <div class="dia-day">Viernes</div>
@@ -639,7 +638,7 @@
 
     <div class="dia-card">
       <div class="dia-img">
-        <img src="https://cartagenabasketcup.com/wp-content/uploads/2026/01/basket-cartagena.webp" alt="Fases eliminatorias" />
+        <img src="images/dia3-jugada.webp" alt="Fases eliminatorias" />
       </div>
       <div class="dia-body">
         <div class="dia-day">Sábado</div>
@@ -653,7 +652,7 @@
 
     <div class="dia-card">
       <div class="dia-img">
-        <img src="https://cartagenabasketcup.com/wp-content/uploads/2025/07/fotos-2025.webp" alt="Finales" />
+        <img src="images/dia4-celebracion.webp" alt="Finales" />
       </div>
       <div class="dia-body">
         <div class="dia-day">Domingo</div>
@@ -711,7 +710,7 @@
   <div class="tc">
     <span class="sec-label">Qué Incluye</span>
     <h2 class="sec-title">Todo lo que <span class="accent">necesitas</span></h2>
-    <p class="sec-sub">Pasa el ratón para pausar el carrusel.</p>
+    <p class="sec-sub">Arrastra el carrusel o deja que se mueva solo.</p>
   </div>
   <div class="carousel-wrap">
     <div class="carousel-track" id="carouselTrack">
@@ -763,11 +762,11 @@
     <p class="sec-sub" style="color:rgba(255,255,255,0.65)">Momentos únicos dentro y fuera de la cancha.</p>
   </div>
   <div class="gallery-grid">
-    <div class="g-item" style="background-image:url('https://cartagenabasketcup.com/wp-content/uploads/2025/07/fotos-2025.webp');background-size:cover;background-position:center;"></div>
-    <div class="g-item" style="background-image:url('https://cartagenabasketcup.com/wp-content/uploads/2026/10/Imagen.jpeg');background-size:cover;background-position:center;"></div>
-    <div class="g-item" style="background-image:url('https://cartagenabasketcup.com/wp-content/uploads/2026/01/basket-cartagena.webp');background-size:cover;background-position:center;"></div>
-    <div class="g-item" style="background-image:url('https://cartagenabasketcup.com/wp-content/uploads/2026/01/partido.webp');background-size:cover;background-position:center;"></div>
-    <div class="g-item" style="background-image:url('https://cartagenabasketcup.com/wp-content/uploads/2026/10/images-11.jpeg');background-size:cover;background-position:center;"></div>
+    <div class="g-item" style="background-image:url('images/galeria1-publico.webp');background-size:cover;background-position:center;"></div>
+    <div class="g-item" style="background-image:url('images/galeria2-equipos.webp');background-size:cover;background-position:center;"></div>
+    <div class="g-item" style="background-image:url('images/galeria3-entrenador.webp');background-size:cover;background-position:center;"></div>
+    <div class="g-item" style="background-image:url('images/galeria4-banquillo.webp');background-size:cover;background-position:center;"></div>
+    <div class="g-item" style="background-image:url('images/dia4-celebracion.webp');background-size:cover;background-position:center;"></div>
   </div>
 </section>
 
@@ -885,6 +884,9 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
+  <div class="footer-logo">
+    <img src="https://cartagenabasketcup.com/wp-content/uploads/2025/04/logo-cartagena-basketcup.webp" alt="Cartagena Basket Cup" />
+  </div>
   <div class="footer-grid">
     <div class="f-contact">
       <div class="f-icon">📞</div>
@@ -929,6 +931,56 @@
 
 
 <script>
+  // ---- Carousel: auto-scroll + drag ----
+  (function() {
+    const wrap = document.querySelector('.carousel-wrap');
+    const track = document.getElementById('carouselTrack');
+    let pos = 0;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartPos = 0;
+    const halfWidth = () => track.scrollWidth / 2;
+
+    function step() {
+      if (!isDragging) {
+        pos -= 1;
+        if (Math.abs(pos) >= halfWidth()) pos = 0;
+        track.style.transform = 'translateX(' + pos + 'px)';
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+
+    wrap.addEventListener('mousedown', e => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragStartPos = pos;
+      wrap.classList.add('dragging');
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      pos = dragStartPos + (e.clientX - dragStartX);
+      track.style.transform = 'translateX(' + pos + 'px)';
+    });
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+      wrap.classList.remove('dragging');
+    });
+
+    wrap.addEventListener('touchstart', e => {
+      isDragging = true;
+      dragStartX = e.touches[0].clientX;
+      dragStartPos = pos;
+    }, { passive: true });
+    wrap.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      pos = dragStartPos + (e.touches[0].clientX - dragStartX);
+      track.style.transform = 'translateX(' + pos + 'px)';
+    }, { passive: true });
+    wrap.addEventListener('touchend', () => { isDragging = false; });
+  })();
+
   // ---- Nav toggle ----
   document.getElementById('navToggle').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('open');
