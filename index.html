@@ -9,25 +9,17 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <!--
-    FUENTE INTIMATE:
-    Coloca tus archivos de fuente en /fonts/Intimate.woff2 e /fonts/Intimate.woff
-    y descomenta el @font-face de abajo.
-  -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ===== FUENTE INTIMATE (descomenta cuando tengas el archivo) =====
+    /* ===== FUENTE INTIMATE ===== */
     @font-face {
       font-family: 'Intimate';
-      src: url('./fonts/Intimate.woff2') format('woff2'),
-           url('./fonts/Intimate.woff') format('woff');
-      font-weight: 700 900;
+      src: url('./fonts/Intimate.otf') format('opentype');
+      font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
-    */
 
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,8 +32,7 @@
       --gray:         #666666;
       --gray-light:   #F7F7F7;
 
-      /* Cambia a 'Intimate' cuando tengas el archivo */
-      --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+      --font-display: 'Intimate', 'Bebas Neue', 'Arial Black', sans-serif;
       --font-body:    'Open Sans', sans-serif;
     }
     html { scroll-behavior: smooth; }
