@@ -97,7 +97,7 @@ cartagena-basket-cup-2027/
 
 ## 📞 Contacto del torneo
 
-- **Teléfono:** (+34) 675 86 97 97
+- **Teléfono:** (+34) 685 82 30 34
 - **Email:** cartagenabasketcup@gmail.com
 - **Instagram:** @cartagenabasketcup
 - **Web:** cartagenabasketcup.com
