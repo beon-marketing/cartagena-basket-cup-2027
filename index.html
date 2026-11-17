@@ -1041,6 +1041,8 @@
       } else {
         await new Promise(r => setTimeout(r, 700)); // demo mode
       }
+      // Aviso al móvil (ntfy) vía función de Vercel; si falla no bloquea el envío
+      try { await fetch('/api/notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), keepalive: true }); } catch (_) {}
       if (typeof fbq !== 'undefined') fbq('track', 'Lead');
       document.getElementById('leadForm').innerHTML = document.getElementById('formSuccess').outerHTML;
       document.getElementById('formSuccess').style.display = 'block';
